@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💖 Diva Magic 8 Ball 💖</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, hotpink, deeppink, purple);
+      background-size: 400% 400%;
+      animation: bgMove 6s infinite alternate;
+      color: white;
+      font-family: "Comic Sans MS", cursive;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    @keyframes bgMove {
+      from { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px pink;
+      animation: blink 1.2s infinite alternate;
+    }
+
+    @keyframes blink {
+      from { opacity: 1; }
+      to { opacity: 0.7; }
+    }
+
+    input {
+      padding: 12px;
+      width: 260px;
+      border-radius: 20px;
+      border: none;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 14px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: fuchsia;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px pink;
+      transition: transform 0.1s;
+    }
+
+    button:hover {
+      transform: scale(1.1) rotate(-2deg);
+    }
+
+    #answer {
+      margin-top: 30px;
+      font-size: 1.4rem;
+      text-shadow: 0 0 8px hotpink;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>✨💅 DIVA MAGIC 8 BALL 💅✨</h1>
+
+<p>Spill it, bestie.</p>
+
+<input id="question" placeholder="What's on your mind?" />
+<br>
+<button onclick="askDiva()">ASK HER</button>
+
+<p id="answer"></p>
+
+<script>
+const names = [
+  "Slayana",
+  "Ms. Pussyqueen",
+  "Diva",
+  "Cuntzilla",
+  "Girlypop",
+  "Juicylicious",
+  "Bestie",
+  "Queen"
+];
+
+const responses = [
+  "No girl... I don't think so.",
+  "PURRR YASSS! And I MEAN it.",
+  "Chile... ask me later. You got me fucked up.",
+  "If you want me to say yes, then I'll lie to your face.",
+  "I'm finding it... it takes time to find it tho...",
+  "Hell yea! You go girl.",
+  "Absolutely not. Hope this helps 💕",
+  "The vibes are off. Cleanse and retry."
+];
+
+function askDiva() {
+  const name = names[Math.floor(Math.random() * names.length)];
+  const response = responses[Math.floor(Math.random() * responses.length)];
+  document.getElementById("answer").innerText =
+    `${name} says: ${response}`;
+}
+</script>
+
+</body>
+</html>
